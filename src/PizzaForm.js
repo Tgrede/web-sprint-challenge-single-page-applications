@@ -1,8 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
+import {Link} from 'react-router-dom'
 
 export default function PizzaForm(props) {
-     const {values, change} = props
+     const {values, change, submit} = props
 
      const onChange = (e) => {
           const {name, value, type, checked} = e.target
@@ -10,8 +11,13 @@ export default function PizzaForm(props) {
           change(name, valueToUse)
      }
 
+     const onSubmit = (e) =>{
+          e.preventDefault()
+          submit()
+     }
+
      return (
-          <StyledForm>
+          <StyledForm onSubmit={onSubmit}>
 
                <h3>Choose Size</h3>
                <label>Size:
@@ -108,7 +114,7 @@ export default function PizzaForm(props) {
                          <input type='number' name='quantity' onChange={onChange}></input>
                     </label>
 
-                    <button>Add to Order!</button>
+                    <Link to={'/pizza/confirmation'}><button>Add to Order!</button></Link>
                </div>
           </StyledForm>
      )

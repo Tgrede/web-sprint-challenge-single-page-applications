@@ -2,6 +2,8 @@ import React, {useState} from 'react'
 import pizza from './Pizza.jpg'
 import styled from 'styled-components'
 import PizzaForm from './PizzaForm'
+import {Link, Route} from 'react-router-dom'
+import PizzaConfirmation from './PizzaConfirmation'
 
 const initialPizzas = []
 const initialFormValues = {
@@ -9,8 +11,8 @@ const initialFormValues = {
      sauce: 'originalRed',
      pepperoni: false,
      sausage: false,
-     canadian_bacon: false,
-     SpicyItalianSausage: false,
+     canadianBacon: false,
+     spicyItalianSausage: false,
      grilledChicken: false,
      onions: false,
      greenPepper: false,
@@ -35,13 +37,39 @@ export default function PizzaCreatePage(props) {
                [name]: value
           })
      }
+     const onSubmit = () => {
+          const newPizza = {
+               size: formValues.size,
+               sauce: formValues.sauce.trim(),
+
+               pepperoni: formValues.pepperoni,
+               sausage: formValues.sausage,
+               canadian_bacon: formValues.canadianBacon,
+               spicyItalianSausage: formValues.spicyItalianSausage,
+               grilledChicken: formValues.grilledChicken,
+               onions: formValues.onions,
+               greenPepper: formValues.greenPepper,
+               dicedTomatos: formValues.dicedTomatos,
+               blackOlives: formValues.blackOlives,
+               roastedGarlic: formValues.roastedGarlic,
+               artichokeHearts: formValues.artichokeHearts,
+               threeCheese: formValues.threeCheese,
+               pineapple: formValues.pineapple,
+               extraCheese: formValues.extraCheese,
+               glutenFree: formValues.glutenFree,
+               quantity: formValues.quantity,
+          }
+          setPizzas([newPizza, ...pizzas])
+          setFormValues(initialFormValues)
+     } 
 
      return (
           <StyledPizzaPage>
                <StyledHeader>Build Your Own Pizza</StyledHeader>
                <StyledPizzaPic src={pizza}/>
                <h2>Build Your Own Pizza</h2>
-               <PizzaForm values={formValues} change={onChange}/>
+               <PizzaForm values={formValues} submit={onSubmit} change={onChange}/>
+               
           </StyledPizzaPage>
      )
 }

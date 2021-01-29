@@ -1,8 +1,9 @@
 import React from "react";
 import HomePage from './HomePage'
 import PizzaCreatePage from './PizzaCreatePage'
-import {Route, Link} from 'react-router-dom'
+import {Route, Link, Switch} from 'react-router-dom'
 import styled from 'styled-components'
+import PizzaConfirmation from "./PizzaConfirmation";
 
 
 export default function App() {
@@ -12,12 +13,18 @@ export default function App() {
         <StyledHeaderText>Lambda Eats</StyledHeaderText>
         <Link to={'/'}><button>Home</button></Link>
       </StyledHeader>
-      <Route exact path={'/'}>
-        <HomePage />
-      </Route>
-      <Route path={'/pizza'}>
-        <PizzaCreatePage />
-      </Route>
+      <Switch>
+        <Route exact path={'/'}>
+          <HomePage />
+        </Route>
+        <Route path={'/pizza/confirmation'}>
+          <PizzaConfirmation />
+        </Route>
+        <Route path={'/pizza'}>
+          <PizzaCreatePage />
+        </Route>
+
+      </Switch>
     </div>
   );
 };
