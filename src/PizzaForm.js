@@ -1,9 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
-import {Link} from 'react-router-dom'
+import {useHistory} from 'react-router-dom'
 
 export default function PizzaForm(props) {
      const {values, change, submit} = props
+     const history = useHistory()
 
      const onChange = (e) => {
           const {name, value, type, checked} = e.target
@@ -114,7 +115,10 @@ export default function PizzaForm(props) {
                          <input type='number' name='quantity' onChange={onChange}></input>
                     </label>
 
-                    <Link to={'/pizza/confirmation'}><button>Add to Order!</button></Link>
+                    <button type='submit' onClick={() => {
+                         submit()
+                         history.push('/pizza/confirmation')
+                         }} >Add to Order!</button>
                </div>
           </StyledForm>
      )
