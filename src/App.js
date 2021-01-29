@@ -8,7 +8,10 @@ import styled from 'styled-components'
 export default function App() {
   return (
     <div>
-      <StyledHeader>Lambda Eats</StyledHeader>
+      <StyledHeader>
+        <StyledHeaderText>Lambda Eats</StyledHeaderText>
+        <Link to={'/'}><button>Home</button></Link>
+      </StyledHeader>
       <Route exact path={'/'}>
         <HomePage />
       </Route>
@@ -19,8 +22,12 @@ export default function App() {
   );
 };
 
-const StyledHeader = styled.h1`
+const StyledHeaderText = styled.h1`
   color: crimson;
-  
+`
+const StyledHeader = styled.div`
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
 `
 

@@ -1,15 +1,16 @@
 import React from 'react'
 import pizza from './Pizza.jpg'
 import styled from 'styled-components'
+import PizzaForm from './PizzaForm'
 
 export default function PizzaCreatePage(props) {
      return (
-          <div>
+          <StyledPizzaPage>
                <StyledHeader>Build Your Own Pizza</StyledHeader>
                <StyledPizzaPic src={pizza}/>
                <h2>Build Your Own Pizza</h2>
-               
-          </div>
+               <PizzaForm />
+          </StyledPizzaPage>
      )
 }
 
@@ -22,4 +23,9 @@ const StyledPizzaPic = styled.img`
 
 const StyledHeader = styled.h2`
      text-align: center;
+`
+
+const StyledPizzaPage = styled.div`
+     width:70%;
+     margin:auto;
 `
