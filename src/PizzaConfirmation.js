@@ -1,10 +1,18 @@
 import React from 'react'
+import styled from 'styled-components'
 
 export default function PizzaConfirmation(props) {
-     const {details} = props
      return (
-          <div>
+          <StyledConfirm>
                <h2>Thank you <br /> for your order!</h2>
-          </div>
+          </StyledConfirm>
      )
 }
+
+const StyledConfirm = styled.div`
+     display:flex;
+     font-size:3rem;
+     flex-direction:column;
+     text-align:center;
+     align-items:center;
+`

@@ -28,6 +28,6 @@ const StyledHeader = styled.h2`
 `
 
 const StyledPizzaPage = styled.div`
-     width:70%;
+     width:60%;
      margin:auto;
 `

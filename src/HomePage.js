@@ -11,17 +11,18 @@ export default function HomePage(props) {
                     <StyledPizzaPic src={pizza} />
                     <Link to='/pizza'><StyledPizzaButton>Want Pizza?</StyledPizzaButton></Link>
                </StyledPizzaBanner>
-               <h2>Food Delivery in Your City</h2>
-
           </div>
      )
 }
 
 const StyledPizzaBanner = styled.div`
      position:relative;
+     display:flex;
+     flex-direction:column;
+     align-items:center;
 `
 const StyledPizzaPic = styled.img`
-     max-width:100%;
+     max-width:80%;
      height:auto;
      border-radius:5px;
      box-shadow:2px 2px 2px 2px; 
