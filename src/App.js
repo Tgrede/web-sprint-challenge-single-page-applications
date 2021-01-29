@@ -1,11 +1,16 @@
 import React from "react";
 
-const App = () => {
+
+export default function App() {
   return (
     <>
       <h1>Lambda Eats</h1>
-      <p>You can remove this code and create your own header</p>
+      <div>
+        <p>Your favorite food, delivered while coding</p>
+        <button>Pizza?</button>
+      </div>
+      <h2>Food Delivery in Your City</h2>
     </>
   );
 };
-export default App;
+
