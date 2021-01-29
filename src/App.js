@@ -1,16 +1,26 @@
 import React from "react";
+import HomePage from './HomePage'
+import PizzaCreatePage from './PizzaCreatePage'
+import {Route, Link} from 'react-router-dom'
+import styled from 'styled-components'
 
 
 export default function App() {
   return (
-    <>
-      <h1>Lambda Eats</h1>
-      <div>
-        <p>Your favorite food, delivered while coding</p>
-        <button>Pizza?</button>
-      </div>
-      <h2>Food Delivery in Your City</h2>
-    </>
+    <div>
+      <StyledHeader>Lambda Eats</StyledHeader>
+      <Route exact path={'/'}>
+        <HomePage />
+      </Route>
+      <Route path={'/pizza'}>
+        <PizzaCreatePage />
+      </Route>
+    </div>
   );
 };
+
+const StyledHeader = styled.h1`
+  color: crimson;
+  
+`
 
