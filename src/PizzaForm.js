@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import {useHistory} from 'react-router-dom'
 
 export default function PizzaForm(props) {
-     const {values, change, submit} = props
+     const {values, change, submit, disabled} = props
      const history = useHistory()
 
      const onChange = (e) => {
@@ -19,6 +19,11 @@ export default function PizzaForm(props) {
 
      return (
           <StyledForm onSubmit={onSubmit}>
+
+               <h3>Who is the pizza for?</h3>
+               <label>Name:
+                    <input type='text' name='username' onChange={onChange} value={values.username} />
+               </label>
 
                <h3>Choose Size</h3>
                <label>Size:
@@ -115,7 +120,7 @@ export default function PizzaForm(props) {
                          <input type='number' name='quantity' onChange={onChange}></input>
                     </label>
 
-                    <button type='submit' onClick={() => {
+                    <button disabled={disabled} type='submit' onClick={() => {
                          submit()
                          history.push('/pizza/confirmation')
                          }} >Add to Order!</button>
