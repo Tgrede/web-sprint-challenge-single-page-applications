@@ -9,7 +9,7 @@ export default function HomePage(props) {
                <StyledPizzaBanner >
                     <StyledHeader>Your favorite food, delivered while coding</StyledHeader>
                     <StyledPizzaPic src={pizza} />
-                    <Link to='/pizza'><StyledPizzaButton>Want Pizza?</StyledPizzaButton></Link>
+                    <Link to='/pizza'><StyledPizzaButton data-cy='pizzaButton'>Want Pizza?</StyledPizzaButton></Link>
                </StyledPizzaBanner>
           </div>
      )

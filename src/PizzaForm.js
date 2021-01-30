@@ -22,7 +22,7 @@ export default function PizzaForm(props) {
 
                <h3>Who is the pizza for?</h3>
                <label>Name:
-                    <input type='text' name='username' onChange={onChange} value={values.username} />
+                    <input type='text' name='username' onChange={onChange} value={values.username} data-cy='username' />
                </label>
 
                <h3>Choose Size</h3>
@@ -58,11 +58,11 @@ export default function PizzaForm(props) {
                <h3>Choose Toppings</h3>
                <label>
                     Pepperoni
-                    <input type='checkbox' name='pepperoni' onChange={onChange} checked={values.pepperoni}></input>
+                    <input type='checkbox' name='pepperoni' onChange={onChange} checked={values.pepperoni} data-cy='pepperoni'></input>
                </label>
                <label>
                     Sausage
-                    <input type='checkbox' name='sausage' onChange={onChange}checked={values.sausage}></input>
+                    <input type='checkbox' name='sausage' onChange={onChange}checked={values.sausage} data-cy='sausage'></input>
                </label>
                <label>
                     Canadian Bacon
@@ -123,7 +123,7 @@ export default function PizzaForm(props) {
                     <button disabled={disabled} type='submit' onClick={() => {
                          submit()
                          history.push('/pizza/confirmation')
-                         }} >Add to Order!</button>
+                         }} data-cy='submit'>Add to Order!</button>
                </div>
           </StyledForm>
      )
